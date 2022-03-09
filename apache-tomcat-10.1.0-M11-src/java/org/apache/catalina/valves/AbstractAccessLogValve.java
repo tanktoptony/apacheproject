@@ -249,7 +249,7 @@ public abstract class AbstractAccessLogValve extends ValveBase implements Access
             /* Last second contained in cache */
             private long last = Long.MIN_VALUE;
             /* Index of "first" in the cyclic cache */
-            private int offset = 0;
+            private final int offset = 0;
             /* Helper object to be able to call SimpleDateFormat.format(). */
             private final Date currentDate = new Date();
 
