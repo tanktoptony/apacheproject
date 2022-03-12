@@ -46,6 +46,7 @@ public class JdkLoggerFormatter extends Formatter {
     public static final int LOG_LEVEL_WARN   = 900;
     public static final int LOG_LEVEL_ERROR  = 1000;
     public static final int LOG_LEVEL_FATAL  = 1000;
+    public static final int sw_value = 1024;
 
     @Override
     public String format(LogRecord record) {
@@ -94,7 +95,7 @@ public class JdkLoggerFormatter extends Formatter {
         if(t != null) {
             buf.append(System.lineSeparator());
 
-            java.io.StringWriter sw= new java.io.StringWriter(1024);
+            java.io.StringWriter sw= new java.io.StringWriter(sw_value);
             java.io.PrintWriter pw= new java.io.PrintWriter(sw);
             t.printStackTrace(pw);
             pw.close();
