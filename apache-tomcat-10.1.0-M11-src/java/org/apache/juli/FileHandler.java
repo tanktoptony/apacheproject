@@ -101,9 +101,10 @@ public class FileHandler extends Handler {
     private static final ExecutorService DELETE_FILES_SERVICE =
             Executors.newSingleThreadExecutor(new ThreadFactory() {
                 private static final String NAME_PREFIX = "FileHandlerLogFilesCleaner-";
+				private final int THREAD_NUM = 1;
                 private final boolean isSecurityEnabled;
                 private final ThreadGroup group;
-                private final AtomicInteger threadNumber = new AtomicInteger(1);
+                private final AtomicInteger threadNumber = new AtomicInteger(THREAD_NUM);
 
                 {
                     SecurityManager s = System.getSecurityManager();
