@@ -77,7 +77,8 @@ public class JdkLoggerFormatter extends Formatter {
          case LOG_LEVEL_WARN:  buf.append(" W ");  break;
          case LOG_LEVEL_ERROR: buf.append(" E "); break;
          //case : buf.append(" F "); break;
-         default: buf.append("   ");
+         default: buf.append(" F  ");
+         break;
          }
 
 
